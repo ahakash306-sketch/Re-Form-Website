@@ -1,7 +1,7 @@
-# Re:Form — deployable build
+# Re:Form — landing page (deployable build)
 
-`index.html` is fully self-contained: fonts, runtime, styles and the PNG-export library are inlined.
-No build step, no server code, no API keys, no dependencies.
+`index.html` is fully self-contained: fonts, runtime and styles are inlined. Photographs
+load from Unsplash's CDN, so the page needs a network connection to show its imagery.
 
 ## Deploy
 
@@ -10,19 +10,18 @@ No build step, no server code, no API keys, no dependencies.
 2. Settings → Pages → Source: `main` branch, root (or `/docs`).
 3. Site goes live at `https://<user>.github.io/<repo>/`.
 
-**Anywhere else** — Netlify, Vercel, S3, Cloudflare Pages, or any static host: drop the file in and point the host at it.
+**Anywhere else** — Netlify, Vercel, Cloudflare Pages, S3: drop the file in.
 
-**Locally** — double-click the file. It works from `file://` because everything is inlined.
+## The CTA links
+
+Every "Build my plan" button points at `app/` (a relative path), which works if you deploy
+the planner into an `/app` subfolder of the same site. If the planner lives on its own
+domain or repo, send the live URL over and the build will be regenerated pointing at it.
 
 ## Notes
 
-- PNG export renders at up to 8× density on desktop; phones step down to stay inside the browser canvas limit.
-- PDF export uses the browser print dialog — choose "Save as PDF" as the destination.
-- All plan calculations run in the browser; your inputs never leave the device.
-- The optional feedback card is the one exception: if you submit it, your rating, name and the
-  plan's parameters are appended as a row to the linked Google Sheet (Apps Script web app).
-  Skipping the card sends nothing. See `google-apps-script.md` in the source project to
-  re-point or disable it (clear `SHEET_URL`).
-- "Share with a friend" uses the OS share sheet where available and an in-app share panel
-  (WhatsApp, Telegram, X, email, copy link) elsewhere.
-- Not medical advice. Calorie estimates use the Mifflin–St Jeor equation with standard activity multipliers.
+- Photographs are Unsplash, free for commercial use, no attribution required (credited in
+  the footer anyway).
+- Icons are Phosphor, loaded from unpkg.
+- Copy states plainly that nothing is sold and no supplements are pushed — keep that true.
+# Re-Form-Website

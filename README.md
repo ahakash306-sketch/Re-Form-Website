@@ -24,4 +24,3 @@ domain or repo, send the live URL over and the build will be regenerated pointin
   the footer anyway).
 - Icons are Phosphor, loaded from unpkg.
 - Copy states plainly that nothing is sold and no supplements are pushed — keep that true.
-# Re-Form-Website
